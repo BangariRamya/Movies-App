@@ -1,0 +1,27 @@
+import React from 'react';
+import {Button, Card} from 'react-bootstrap';
+
+
+class Movie extends React.Component {
+
+
+  
+
+  render(){
+    
+          return (
+            <Card style={{ width: '18rem' }} className="card">
+                <Card.Img height="300px" margin="30px" variant="top" src={this.props.details.Poster} />
+                <Card.Body>
+                  <Card.Title>{this.props.details.Title}</Card.Title>
+                    <Card.Text>
+                        {this.props.details.Year}
+                    </Card.Text>
+                    <Button variant="primary" onClick={()=>{this.props.changePage("singleMoviePage",this.props.details.Title)}}>Check out</Button>
+                </Card.Body>
+          </Card>
+        );
+    }
+}
+
+export default Movie;
